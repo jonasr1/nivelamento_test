@@ -1,5 +1,6 @@
 import requests
-from file_management.interfaces import Downloader
+
+from .interfaces import Downloader
 
 
 class FileDownloader(Downloader):

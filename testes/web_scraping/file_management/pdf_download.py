@@ -13,7 +13,7 @@ class PDFDownloader(FileDownloader):
         try:
             content = self.downloader.download_file(url)
             self.file_saver.save(content, destination)
-            print(f"Arquivo salvo em {destination}")
+            print(f'Arquivo salvo em {destination}')
         except Exception:
-            print("Ocorreu um erro inesperado ao tentar baixar o arquivo:")
+            print('Ocorreu um erro inesperado ao tentar baixar o arquivo:')
             traceback.print_exc()
