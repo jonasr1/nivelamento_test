@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "25bda534-0f2b-43e8-bb61-1377e30e2d8c",
+		"name": "Operadora API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40799868"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?query=saude&limit=10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "saude",
+							"description": "(Required) "
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				},
+				"description": "'Search across all relevant columns using a generic term."
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/search?query=<string>&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "<string>"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"Registro_ANS\": \"<string>\",\n    \"CNPJ\": \"<string>\",\n    \"Razao_Social\": \"<string>\",\n    \"Nome_Fantasia\": \"<string>\",\n    \"Modalidade\": \"<string>\",\n    \"Logradouro\": \"<string>\",\n    \"Numero\": \"<string>\",\n    \"Complemento\": \"<string>\",\n    \"Bairro\": \"<string>\",\n    \"Cidade\": \"<string>\",\n    \"UF\": \"<string>\",\n    \"CEP\": \"<string>\",\n    \"DDD\": \"<string>\",\n    \"Telefone\": \"<string>\",\n    \"Fax\": \"<string>\",\n    \"Endereco_eletronico\": \"<string>\",\n    \"Representante\": \"<string>\",\n    \"Cargo_Representante\": \"<string>\",\n    \"Regiao_de_Comercializacao\": \"<string>\",\n    \"Data_Registro_ANS\": \"<string>\"\n  },\n  {\n    \"Registro_ANS\": \"<string>\",\n    \"CNPJ\": \"<string>\",\n    \"Razao_Social\": \"<string>\",\n    \"Nome_Fantasia\": \"<string>\",\n    \"Modalidade\": \"<string>\",\n    \"Logradouro\": \"<string>\",\n    \"Numero\": \"<string>\",\n    \"Complemento\": \"<string>\",\n    \"Bairro\": \"<string>\",\n    \"Cidade\": \"<string>\",\n    \"UF\": \"<string>\",\n    \"CEP\": \"<string>\",\n    \"DDD\": \"<string>\",\n    \"Telefone\": \"<string>\",\n    \"Fax\": \"<string>\",\n    \"Endereco_eletronico\": \"<string>\",\n    \"Representante\": \"<string>\",\n    \"Cargo_Representante\": \"<string>\",\n    \"Regiao_de_Comercializacao\": \"<string>\",\n    \"Data_Registro_ANS\": \"<string>\"\n  }\n]"
+				},
+				{
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/search?query=<string>&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "<string>"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Filter Operadoras",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Nome_Fantasia\": \"saude\",\n  \"UF\": \"SP\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/filter?limit=10",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"filter"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Filters operators based on specific columns passed via JSON."
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"eu_a\": \"<string>\",\n  \"magnaf\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/filter?limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"filter"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"Registro_ANS\": \"<string>\",\n    \"CNPJ\": \"<string>\",\n    \"Razao_Social\": \"<string>\",\n    \"Nome_Fantasia\": \"<string>\",\n    \"Modalidade\": \"<string>\",\n    \"Logradouro\": \"<string>\",\n    \"Numero\": \"<string>\",\n    \"Complemento\": \"<string>\",\n    \"Bairro\": \"<string>\",\n    \"Cidade\": \"<string>\",\n    \"UF\": \"<string>\",\n    \"CEP\": \"<string>\",\n    \"DDD\": \"<string>\",\n    \"Telefone\": \"<string>\",\n    \"Fax\": \"<string>\",\n    \"Endereco_eletronico\": \"<string>\",\n    \"Representante\": \"<string>\",\n    \"Cargo_Representante\": \"<string>\",\n    \"Regiao_de_Comercializacao\": \"<string>\",\n    \"Data_Registro_ANS\": \"<string>\"\n  },\n  {\n    \"Registro_ANS\": \"<string>\",\n    \"CNPJ\": \"<string>\",\n    \"Razao_Social\": \"<string>\",\n    \"Nome_Fantasia\": \"<string>\",\n    \"Modalidade\": \"<string>\",\n    \"Logradouro\": \"<string>\",\n    \"Numero\": \"<string>\",\n    \"Complemento\": \"<string>\",\n    \"Bairro\": \"<string>\",\n    \"Cidade\": \"<string>\",\n    \"UF\": \"<string>\",\n    \"CEP\": \"<string>\",\n    \"DDD\": \"<string>\",\n    \"Telefone\": \"<string>\",\n    \"Fax\": \"<string>\",\n    \"Endereco_eletronico\": \"<string>\",\n    \"Representante\": \"<string>\",\n    \"Cargo_Representante\": \"<string>\",\n    \"Regiao_de_Comercializacao\": \"<string>\",\n    \"Data_Registro_ANS\": \"<string>\"\n  }\n]"
+				},
+				{
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"eu_a\": \"<string>\",\n  \"magnaf\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/filter?limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"filter"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/",
+			"type": "string"
+		}
+	]
+}
