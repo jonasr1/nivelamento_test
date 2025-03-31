@@ -2,9 +2,9 @@ import os
 
 from fastapi import APIRouter, Body, HTTPException, status
 
-from data_loader import load_data
-from models import Operadora
-from services import search_operadoras, search_operadoras_by_filters
+from .data_loader import load_data
+from .models import Operadora
+from .services import search_operadoras, search_operadoras_by_filters
 
 router = APIRouter()
 

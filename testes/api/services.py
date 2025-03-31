@@ -1,7 +1,7 @@
 from fastapi import HTTPException, status
 import pandas as pd
 
-from models import Operadora
+from .models import Operadora
 
 def filter_dataframe(df: pd.DataFrame, conditions: list[pd.Series], filtered_df, limit: int) -> list[Operadora]:
     if not conditions:

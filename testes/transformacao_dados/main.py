@@ -43,5 +43,5 @@ def main():
     compressor.compress(source_folder=output_dir, zip_name_without_ext='Teste_Jonas_Renan')
 
     print('Processo concluído!')
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
